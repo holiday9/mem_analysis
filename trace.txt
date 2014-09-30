@@ -1,0 +1,53 @@
+doing : set target
+
+阅读 https://developer.android.com/training/articles/memory.html
+知道整个进程的内存包含哪些.
+
+Managing Your App's Memory
+
+1. 内存管理很重要
+2. 应用要在合适的地方释放内存,而gc要能收集到.
+3. 本文主要讲述的内容:android如何管理应用及内存申请.
+4. Android如何管理内存	
+	1. android不提供内存交换,但它确实使用了分页和内存映射.
+	2. 实现进程间内存共享,共享方法:
+		1_新创建的进程与Zygote共享框架代码和资源
+		2_静态数据被内存映像到进程中.这些数据可以被分页出.
+		3_不太懂
+
+? 什么是Sharing Memory
+
+Allocating and Reclaiming App Memory
+	Dalvik heap  都会有一个虚拟大小.
+	? 什么是PSS
+	? 第三段不太懂
+
+Restricting App Memory
+android 内存是受到限制的,要想知道这些限制可以调用一些方法.
+
+Switching Apps
+关于程序切换的时候内存中的一些情况.
+
+
+How Your App Should Manage Memory
+1. 在应用的开发和涉及阶段都应该考虑内存的情况.
+2. 谨慎的使用service,当service不在任何事情的时候,一定要把它结束掉.
+3. 如何合理使用onTrimMemory
+4. 检查由多少内存可以使用.
+5. 避免图片的内存浪费.
+6. 使用优化的数据容器  SparseArray
+7. 多进程的影响.
+
+===========================android mem Investigating==================
+1. 手机开发中的内存很紧张
+2. you need some tool to analyze your app mem.
+
+线路详情页在滑动的时候发生
+GC_FOR_MALLOC
+3. 通过log查看
+4. Heap Updates 监控某个动作
+5. Tracking Allocations 实时监测,可以方便监控ui.
+6. Private (Clean and Dirty) RAM :
+
+
+
